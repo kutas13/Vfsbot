@@ -1,0 +1,128 @@
+# Example configuration for the VFS France booking automation.
+# Copy this file to config.yaml and adjust the values and selectors to
+# match your VFS account and the HTML structure observed in the browser.
+
+webdriver:
+  browser: chrome
+  headless: true
+  # executable_path: /path/to/chromedriver  # Optional when chromedriver is on PATH
+
+site:
+  login_url: "https://visa.vfsglobal.com/onevisa/france"
+  # dashboard_url: "https://visa.vfsglobal.com/onevisa/dashboard"
+  # appointment_url: "https://visa.vfsglobal.com/onevisa/france/appointment"
+
+credentials:
+  email: "user@example.com"
+  password: "change-me"
+
+applicant:
+  first_name: "Ada"
+  last_name: "Lovelace"
+  passport_number: "AA1234567"
+  passport_issue_date: "2022-01-01"
+  passport_expiry_date: "2032-01-01"
+  date_of_birth: "1990-12-10"
+  nationality: "Turkey"
+  phone_number: "+905551112233"
+  email: "ada.lovelace@example.com"
+  additional_fields:
+    applicant_passport_place_of_issue: "Istanbul"
+
+appointment:
+  center: "Istanbul"
+  visa_category: "Short Stay"
+  sub_category: "Tourism"
+  applicants: 1
+  polling:
+    interval_seconds: 60
+    max_attempts: 120
+  preferred_slots:
+    - date: "2024-09-01"
+      times: ["09:00", "09:15"]
+    - date: "2024-09-02"
+      times: []  # Accept any time on this date
+
+# The selectors must be updated after inspecting the DOM of the VFS portal.
+# All keys referenced in the Python code are defined here with CSS selectors
+# that match the 2024 VFS France portal layout. Adjust them as needed.
+selectors:
+  login_email:
+    by: css
+    value: "input#email"
+  login_password:
+    by: css
+    value: "input#password"
+  login_submit:
+    by: css
+    value: "button[type='submit']"
+  dashboard_ready:
+    by: css
+    value: "div.dashboard"
+  appointment_nav:
+    by: css
+    value: "a[href*='appointment']"
+  center_select:
+    by: css
+    value: "select#LocationId"
+  visa_category_select:
+    by: css
+    value: "select#VisaCategory"
+  sub_category_select:
+    by: css
+    value: "select#SubVisaCategory"
+  applicants_input:
+    by: css
+    value: "input#NumberOfApplicants"
+  preferences_submit:
+    by: css
+    value: "button#SubmitButton"
+  available_date:
+    by: css
+    value: "button.calendar-day:not([disabled])"
+    attribute: "data-date"
+  times_container:
+    by: css
+    value: "div#TimeSlots"
+  available_time:
+    by: css
+    value: "button.time-slot:not([disabled])"
+  time_confirm:
+    by: css
+    value: "button#ConfirmTime"
+  applicant_first_name:
+    by: css
+    value: "input#FirstName"
+  applicant_last_name:
+    by: css
+    value: "input#LastName"
+  applicant_passport_number:
+    by: css
+    value: "input#PassportNumber"
+  applicant_passport_issue_date:
+    by: css
+    value: "input#PassportIssueDate"
+  applicant_passport_expiry_date:
+    by: css
+    value: "input#PassportExpiryDate"
+  applicant_date_of_birth:
+    by: css
+    value: "input#DateOfBirth"
+  applicant_nationality:
+    by: css
+    value: "input#Nationality"
+  applicant_phone_number:
+    by: css
+    value: "input#PhoneNumber"
+  applicant_email:
+    by: css
+    value: "input#Email"
+  applicant_passport_place_of_issue:
+    by: css
+    value: "input#PassportPlaceOfIssue"
+  terms_checkbox:
+    by: css
+    value: "input#TermsAndConditions"
+  final_submit:
+    by: css
+    value: "button#ConfirmAppointment"
