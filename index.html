@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spyke Turizm | Giriş</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="loginScreen" class="login-layout">
+      <section class="brand-panel">
+        <div class="logo-wrap" aria-label="Spyke Turizm logosu alanı">
+          <div class="logo-placeholder">
+            <span>SPYKETURIZM</span>
+            <small>Logo dosyanı buraya ekleyebilirsin</small>
+          </div>
+        </div>
+        <p class="brand-description">
+          Vize danışmanlığı, pasaport evrak kontrolü ve başvuru süreci takibini hızlı ve net şekilde sunuyoruz.
+        </p>
+      </section>
+
+      <section class="form-panel" aria-label="Giriş formu">
+        <h2>Hoş geldiniz</h2>
+        <p>Hesabınıza kullanıcı adı ve şifrenizle giriş yapın.</p>
+
+        <form id="loginForm">
+          <label for="username">Kullanıcı Adı</label>
+          <input id="username" name="username" type="text" placeholder="kullanici.adi" required />
+
+          <label for="password">Şifre</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required />
+
+          <div class="form-row">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" />
+              Beni hatırla
+            </label>
+            <a href="#">Şifremi unuttum</a>
+          </div>
+
+          <button type="submit">Giriş Yap</button>
+          <p id="message" class="message" aria-live="polite"></p>
+          <p class="helper">Test hesabı: Furkan Kutas / Furkan13!</p>
+        </form>
+      </section>
+    </main>
+
+    <main id="dashboardScreen" class="dashboard hidden" aria-label="Ana sayfa">
+      <aside class="sidebar">
+        <h2>Spyke Turizm</h2>
+        <nav>
+          <button class="menu-item active" data-view="home">Ana Sayfa</button>
+          <button class="menu-item" data-view="customers">Müşteriler</button>
+          <button class="menu-item" data-view="appointment">Randevu Al</button>
+          <button class="menu-item" data-view="accounting">Muhasebe</button>
+          <button class="menu-item" data-view="passport">Pasaport Takip</button>
+          <button id="logoutBtn" class="menu-item logout">Çıkış</button>
+        </nav>
+      </aside>
+
+      <section class="dashboard-content">
+        <article class="panel" data-panel="home">
+          <h1>Ana Sayfa</h1>
+          <p>Spyke Turizm yönetim ekranına hoş geldiniz.</p>
+        </article>
+
+        <article class="panel hidden" data-panel="customers">
+          <h1>Müşteriler</h1>
+          <p>Müşteri listesi ve iletişim bilgileri bu alanda görüntülenecek.</p>
+        </article>
+
+        <article class="panel hidden" data-panel="appointment">
+          <h1>Randevu Al</h1>
+          <p>Yeni randevu planlama ve takvim işlemleri burada olacak.</p>
+        </article>
+
+        <article class="panel hidden" data-panel="accounting">
+          <h1>Muhasebe</h1>
+          <p>Ödeme, fatura ve finans takip modülü bu alanda yer alacak.</p>
+        </article>
+
+        <article class="panel hidden" data-panel="passport">
+          <h1>Pasaport Takip</h1>
+          <p>Pasaport görsel yükleme ve başvuru süreç takibi burada yönetilecek.</p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+:root {
+  --green-50: #f0fff4;
+  --green-100: #dcfce7;
+  --green-300: #86efac;
+  --green-500: #22c55e;
+  --green-700: #15803d;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(145deg, #f7fff8 0%, #e9ffe9 45%, #ddfce4 100%);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login-layout {
+  width: min(960px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(20, 83, 45, 0.15);
+}
+
+.brand-panel {
+  background: linear-gradient(170deg, var(--green-500) 0%, var(--green-700) 100%);
+  color: #fff;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.logo-wrap {
+  width: 100%;
+}
+
+.logo-placeholder {
+  border: 2px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: rgba(8, 23, 16, 0.18);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.logo-placeholder span {
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+}
+
+.logo-placeholder small {
+  color: #ddffe7;
+  font-size: 0.9rem;
+}
+
+.brand-description {
+  margin: 0;
+  line-height: 1.7;
+  color: #ebffef;
+}
+
+.form-panel {
+  padding: 3rem;
+}
+
+.form-panel h2 {
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.form-panel > p {
+  margin: 0.7rem 0 2rem;
+  color: var(--text-muted);
+}
+
+form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: 1px solid #d1d5db;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: var(--green-500);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+.form-row {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.checkbox {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 500;
+}
+
+.form-row a {
+  color: var(--green-700);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+button {
+  margin-top: 0.8rem;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.95rem 1rem;
+  background: var(--green-500);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.message {
+  min-height: 1.5rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.message.success {
+  color: #166534;
+}
+
+.message.error {
+  color: #b91c1c;
+}
+
+.helper {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.dashboard {
+  width: min(1120px, 100%);
+  min-height: 700px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(20, 83, 45, 0.15);
+}
+
+.sidebar {
+  background: linear-gradient(170deg, var(--green-700) 0%, #0f5a2e 100%);
+  color: #fff;
+  padding: 2rem 1.25rem;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.menu-item {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 0.7rem;
+}
+
+.menu-item.active {
+  background: #fff;
+  color: var(--green-700);
+}
+
+.menu-item.logout {
+  background: rgba(248, 113, 113, 0.22);
+}
+
+.menu-item.logout:hover {
+  background: rgba(248, 113, 113, 0.35);
+}
+
+.dashboard-content {
+  padding: 2rem;
+  background: #f8fffa;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d1fae5;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.panel h1 {
+  margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  body {
+    padding: 1rem;
+  }
+
+  .login-layout,
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-panel,
+  .form-panel,
+  .dashboard-content {
+    padding: 1.2rem;
+  }
+
+  .logo-placeholder span {
+    font-size: 1.5rem;
+  }
+}
